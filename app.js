@@ -1,7 +1,11 @@
+const Employee = require("lib/Employee.js")
 const Manager = require("lib/Manager.js");
 const Engineer = require("lib/Engineer.js");
 const Intern = require("lib/Intern.js");
+
+const axios = require("axios");
 const inquirer = require("inquirer");
+const Jest = require("jest");
 const path = require("path");
 const fs = require("fs");
 
@@ -48,8 +52,86 @@ const adminQuestions = [
     choices: ["yes", "No"]
   
 }
+
 ];
 
+const questions = [ 
+{
+    type: "input",
+    message: "What is your employee name",
+    name: "name",
+  
+},
+{
+    type: "input",
+    message: "What is your employee Id number?",
+    name: "id",
+  
+},
+{
+    type: "input",
+    message: "What is your employee's email?",
+    name: "email",
+  
+},
+{
+    type: "list",
+    message: "What is employees title?",
+    name: "title",
+    choices: ["engineer", "intern"]
+  
+}
+];
+
+const managerQuestions = [ 
+{
+    type: "input",
+    message: "What is your employee name",
+    name: "name",
+  
+},
+{
+    type: "input",
+    message: "What is your employee Id number?",
+    name: "id",
+  
+},
+{
+    type: "input",
+    message: "What is your employee's email?",
+    name: "email",
+  
+},
+{
+    type: "list",
+    message: "What is employees title?",
+    name: "title",
+    choices: ["engineer", "intern"]
+  
+}
+];
+
+const managerQuestion = [
+    { type: "input",
+    message: "What is your office number?",
+    name: "officeNumber",
+    
+  }
+]
+const engineerQuestion = [
+    { type: "input",
+    message: "What is the engineer's GitHub username",
+    name: "gitName",
+    
+  }
+]
+const internQuestion = [
+    { type: "input",
+    message: "What school does your intern attend?",
+    name: "school",
+    
+  }
+];
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
