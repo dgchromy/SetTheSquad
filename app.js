@@ -1,18 +1,21 @@
-const Employee = require("lib/Employee.js")
-const Manager = require("lib/Manager.js");
-const Engineer = require("lib/Engineer.js");
-const Intern = require("lib/Intern.js");
 
-const axios = require("axios");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+
 const inquirer = require("inquirer");
-const Jest = require("jest");
 const path = require("path");
 const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
-const render = require("lib/htmlRenderer.js");
+const render = require("./lib/htmlRenderer");
+
+// var teamMembers = [];
+// function buildPage(){
+//     fs.writeFileSync(outputPath, render(teamMembers), 'utf-8')
+// }
 
 const startQuestion = [
     {
@@ -132,13 +135,14 @@ const internQuestion = [
     
   }
 ];
+// console.log(internQuestion)
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
-// generate and return a block of HTML including templated divs for each employee!
+// generate and return a block of HTML including templated div for each employee!
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
