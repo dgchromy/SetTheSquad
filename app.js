@@ -21,7 +21,7 @@ const startQuestion = [
         name: "StartQuestion",
         choices: [
             "add and employee to the team",
-            "Create Squad Html page (Add Squad memeber first)" 
+            "Create Squad Html page (Add team member  first)" 
         ]
     }
 ];
@@ -48,7 +48,7 @@ const adminQuestions = [
 {
     type: "confirm",
     message: "Are you a manager?",
-    name: "postion",
+    name: "position",
     choices: ["yes", "No"]
   
 }
@@ -83,7 +83,7 @@ const questions = [
 }
 ];
 
-const managerQuestions = [ 
+const ManagerQuestions = [ 
 {
     type: "input",
     message: "What is your employee name",
@@ -111,14 +111,14 @@ const managerQuestions = [
 }
 ];
 
-const managerQuestion = [
+const ManagerQuestion = [
     { type: "input",
     message: "What is your office number?",
     name: "officeNumber",
     
   }
 ]
-const engineerQuestion = [
+const EngineerQuestion = [
     { type: "input",
     message: "What is the engineer's GitHub username",
     name: "gitName",
