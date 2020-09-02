@@ -48,7 +48,29 @@ function createTeam()
             }
         });
     }
-    
+    function addManager(){
+        inquirer.prompt([{
+            type:"Input",
+            name:"managerName",
+            message:"What is your name?",
+        },
+        {
+            type:"input",
+            name:"managerId",
+            message:"What is your manager's id?",
+        },
+        {
+            type:"input",
+            name:"managerEmail",
+            message:"What is your Email?",
+        },
+        {
+            type:"input",
+            name:"officeNumber",
+            message:"What is your office number?",
+        },
+    ])
+    }
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
