@@ -14,41 +14,41 @@ const render = require("./lib/htmlRenderer");
 var teamMembers = [];
 function buildPage()
 {
-    fs.writeFileSync(outputPath, render(teamMembers), 'utf-8')
+    fs.writeFileSync(outputPath, render(teamMembers), 'utf-8');
 }
 
-function createTeam(){
-    inquirer.prompt([
-        {
-            type:"list",
-            name:"memberChoice",
-            message:"To generate your team please select a member you would like to add. ",
-            choices:[
-                "Manager",
-                "Engineer",
-                "Intern",
-                "I dont want to add any more team members"
-            ]
-        }
-    ]
-    )
-    }
-    function createTeam(){
-        inquirer.prompt([
+function createTeam()
+{
+    inquirer.prompt([{
+            type: "list",
+            name: "memberChoice",
+            message: "To generate your team please select a member you would like to add. ",
+            choices: ["Manager", "Engineer", "Intern", "I dont want to add any more team members"]
+        }]);
+    function createTeam()
+    {
+        inquirer.prompt([{
+                type: "list",
+                name: "memberChoice",
+                message: "To generate your team please select a member you would like to add. ",
+                choices: ["Manager", "Engineer", "Intern", "I dont want to add any more team members"]
+            }]).then(userChoice => {
+            switch (userChoice.memeberChoice)
             {
-                type:"list",
-                name:"memberChoice",
-                message:"To generate your team please select a member you would like to add. ",
-                choices:[
-                    "Manager",
-                    "Engineer",
-                    "Intern",
-                    "I dont want to add any more team members"
-                ]
+                case "Engineer":
+                    addEngineer();
+                    break;
+                case "Intern":
+                    addIntern();
+                    break;
+                case "Manager":
+                    addManager();
+                    break;
+                default: buildPage();
             }
-
-        ]).then(userChoice)
-        }
+        });
+    }
+    
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
