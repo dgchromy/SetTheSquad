@@ -1,4 +1,3 @@
-
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -12,130 +11,14 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-// var teamMembers = [];
-// function buildPage(){
-//     fs.writeFileSync(outputPath, render(teamMembers), 'utf-8')
-// }
-
-const startQuestion = [
-    {
-        type: "list",
-        message: "click option to begin",
-        name: "StartQuestion",
-        choices: [
-            "add and employee to the team",
-            "Create Squad Html page (Add team member  first)" 
-        ]
-    }
-];
-
-const adminQuestions = [ 
+var teamMembers = [];
+function buildPage()
 {
-    type: "input",
-    message: "What is your name",
-    name: "name",
-  
-},
-{
-    type: "input",
-    message: "What is your Id number?",
-    name: "id",
-  
-},
-{
-    type: "input",
-    message: "What is your email?",
-    name: "email",
-  
-},
-{
-    type: "confirm",
-    message: "Are you a manager?",
-    name: "position",
-    choices: ["yes", "No"]
-  
+    fs.writeFileSync(outputPath, render(teamMembers), 'utf-8')
 }
 
-];
 
-const questions = [ 
-{
-    type: "input",
-    message: "What is your employee name",
-    name: "name",
-  
-},
-{
-    type: "input",
-    message: "What is your employee Id number?",
-    name: "id",
-  
-},
-{
-    type: "input",
-    message: "What is your employee's email?",
-    name: "email",
-  
-},
-{
-    type: "list",
-    message: "What is employees title?",
-    name: "title",
-    choices: ["engineer", "intern"]
-  
-}
-];
 
-const ManagerQuestions = [ 
-{
-    type: "input",
-    message: "What is your employee name",
-    name: "name",
-  
-},
-{
-    type: "input",
-    message: "What is your employee Id number?",
-    name: "id",
-  
-},
-{
-    type: "input",
-    message: "What is your employee's email?",
-    name: "email",
-  
-},
-{
-    type: "list",
-    message: "What is employees title?",
-    name: "title",
-    choices: ["engineer", "intern"]
-  
-}
-];
-
-const ManagerQuestion = [
-    { type: "input",
-    message: "What is your office number?",
-    name: "officeNumber",
-    
-  }
-]
-const EngineerQuestion = [
-    { type: "input",
-    message: "What is the engineer's GitHub username",
-    name: "gitName",
-    
-  }
-]
-const internQuestion = [
-    { type: "input",
-    message: "What school does your intern attend?",
-    name: "school",
-    
-  }
-];
-// console.log(internQuestion)
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
