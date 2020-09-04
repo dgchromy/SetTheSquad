@@ -69,8 +69,67 @@ function createTeam()
             name:"officeNumber",
             message:"What is your office number?",
         },
-    ])
+    ]).then(answers => {
+        var manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber);
+        teamMembers.push(manager);
+        createTeam();
+    })
     }
+    function addEngineer(){
+        inquirer.prompt([{
+            type:"Input",
+            name:"engineerName",
+            message:"What is your Engineer name?",
+        },
+        {
+            type:"input",
+            name:"engeeneerId",
+            message:"What is your engineer id?",
+        },
+        {
+            type:"input",
+            name:"engineerEmail",
+            message:"What is your engineer Email?",
+        },
+        {
+            type:"input",
+            name:"engineerGithub",
+            message:"What is your engineer Github username?",
+        },
+    ]).then(answers => {
+        var engineer = new engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+        teamMembers.push(engineer);
+        createTeam();
+    })
+    }
+    function addIntern(){
+        inquirer.prompt([{
+            type:"Input",
+            name:"internName",
+            message:"What is your intern's name?",
+        },
+        {
+            type:"input",
+            name:"internId",
+            message:"What is your intern's id?",
+        },
+        {
+            type:"input",
+            name:"internEmail",
+            message:"What is your intern's Email?",
+        },
+        {
+            type:"input",
+            name:"internSchool",
+            message:"What school does your intern attend?",
+        },
+    ]).then(answers => {
+        var intern = new intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+        teamMembers.push(intern);
+        createTeam();
+    })
+    }
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
