@@ -57,5 +57,4 @@
 
 
 
-
-[Screen Shot 2020-09-05 at 11.05.23 AM.zip](https://github.com/dgchromy/SetTheSquad/files/5178467/Screen.Shot.2020-09-05.at.11.05.23.AM.zip)
+![]
